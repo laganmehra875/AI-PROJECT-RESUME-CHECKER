@@ -3,13 +3,14 @@ import json
 from mistralai.client.sdk import Mistral
 
 def analyze_resume(resume_text, user_goal):
-    # ✅ Check for API key inside the function for better debugging
-    api_key = os.getenv("MISTRAL_API_KEY")
+    # ✅ Emergency Fix: Using hardcoded key as fallback if Render environment variable is missing
+    api_key = os.getenv("MISTRAL_API_KEY", "adKWQxFJZHeCMgdMp9jkPb1yMFCHQy9y")
     
     if not api_key or api_key == "your_api_key_here":
-        return {"error": "MISTRAL_API_KEY is not set correctly in Render! Go to 'Environment' tab and add it."}
+        return {"error": "MISTRAL_API_KEY is not set correctly! Please check your keys."}
     
     client = Mistral(api_key=api_key)
+
     
     prompt = f"""
 You are a Senior software engineer and hiring manager.
