@@ -55,4 +55,4 @@ Resume:
 
     except Exception as e:
         print(f"Error calling Mistral API: {e}")
-        return {}
+        return {"error": str(e)}
