@@ -30,7 +30,7 @@ AI Career Copilot is a powerful web application designed to help job seekers opt
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/AI-PROJECT-RESUME-CHECKER.git
+   git clone https://github.com/laganmehra875/AI-PROJECT-RESUME-CHECKER.git
    cd AI-PROJECT-RESUME-CHECKER
    ```
 
