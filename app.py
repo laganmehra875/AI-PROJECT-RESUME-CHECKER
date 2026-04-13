@@ -1,3 +1,4 @@
+import os
 from sqlalchemy.engine import result
 from sqlalchemy.sql.functions import user
 import email
@@ -11,7 +12,8 @@ from ai import analyze_resume
 
 
 app = Flask(__name__)
-app.secret_key="secret123"
+app.secret_key = os.getenv("SECRET_KEY", "secret123")
+
 Base.metadata.create_all(bind=engine)
 
 @app.teardown_appcontext
