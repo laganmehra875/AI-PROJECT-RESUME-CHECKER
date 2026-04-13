@@ -1,11 +1,16 @@
-from mistralai.client.sdk import Mistral
-import json
 import os
-
-# ✅ Add your API key properly
-client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
+import json
+from mistralai.client.sdk import Mistral
 
 def analyze_resume(resume_text, user_goal):
+    # ✅ Check for API key inside the function for better debugging
+    api_key = os.getenv("MISTRAL_API_KEY")
+    
+    if not api_key or api_key == "your_api_key_here":
+        return {"error": "MISTRAL_API_KEY is not set correctly in Render! Go to 'Environment' tab and add it."}
+    
+    client = Mistral(api_key=api_key)
+    
     prompt = f"""
 You are a Senior software engineer and hiring manager.
 
@@ -43,11 +48,8 @@ Resume:
         )
 
         content = response.choices[0].message.content
-
-        # ✅ Clean response (important)
         content = content.strip()
 
-        # If model adds extra text → extract JSON only
         if "{" in content:
             content = content[content.find("{"):content.rfind("}")+1]
 
@@ -55,4 +57,4 @@ Resume:
 
     except Exception as e:
         print(f"Error calling Mistral API: {e}")
-        return {"error": str(e)}
+        return {"error": f"API Error: {str(e)}"}
