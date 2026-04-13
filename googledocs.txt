@@ -1,0 +1,3 @@
+password="SAcwttISvQnn2ri9"
+
+client="mysql+mysqldb://MeTkVrjhT5xQnyt.root:SAcwttISvQnn2ri9@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/test?ssl_mode=VERIFY_IDENTITY&ssl_ca=/etc/ssl/cert.pem"

@@ -1,0 +1,16 @@
+venv
+
+all project same packages
+
+A.Flask2
+b.Flask3
+
+pip install flask sqlalchemy pymysql openai PyPDF2 python-docx python-dotenv
+
+1- step's -setup
+2- database connection
+
+CREATE TABLE resume_checker;
+
+api="adKWQxFJZHeCMgdMp9jkPb1yMFCHQy9y"
+
