@@ -26,7 +26,7 @@ AI Career Copilot is a powerful web application designed to help job seekers opt
 - Python 3.10+
 - A Mistral AI API Key
 
-### 📜 Multi-Agent Autonomy for Deep Insights
+### AI Resume Checker
  Available at your primary URL https:
  ```bash
     https://ai-project-resume-checker-1.onrender.com
